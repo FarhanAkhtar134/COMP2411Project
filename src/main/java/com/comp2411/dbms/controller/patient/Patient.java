@@ -1,12 +1,14 @@
 package com.comp2411.dbms.controller.patient;
 
 
+import com.comp2411.dbms.controller.consultation.Consultation;
+import com.comp2411.dbms.controller.precondition.Precondition;
 import lombok.Data;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
@@ -31,6 +33,12 @@ public class Patient {
     @Column(name = "DATE_OF_BIRTH")
     private String dateOfBirth;
 
+    @OneToMany(mappedBy = "patient_ID")
+    private Set<Precondition> preconditions;
+
+
+    @OneToMany(mappedBy = "patient", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private Set<Consultation> consultations;
 
 
 

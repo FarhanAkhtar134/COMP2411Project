@@ -17,11 +17,11 @@
 <div class="wrapper">
     <nav id="sidebar" class="active">
         <div class="sidebar-header">
-            <img src="assets/img/bootstraper-logo.png" alt="bootraper logo" class="app-logo">
+            <img th:src="@{/assets/img/bootstraper-logo.png}" alt="bootraper logo" class="app-logo">
         </div>
         <ul class="list-unstyled components">
             <li>
-                <a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+                <a th:href="@{/dashboard}"><i class="fas fa-home"></i> Dashboard</a>
             </li>
 
             <li>
@@ -33,21 +33,18 @@
                     <li>
                         <a th:href="@{/patients}"> Show all patients</a>
                     </li>
-                    <li>
-                        <a href="ui-cards.html"> Admitted</a>
-                    </li>
 
                 </ul>
             </li>
 
             <li>
-                <a href="#pagesmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-copy"></i> Pages</a>
+                <a href="#pagesmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-copy"></i> Doctors</a>
                 <ul class="collapse list-unstyled" id="pagesmenu">
                     <li>
-                        <a href="blank.html"><i class="fas fa-file"></i> Blank page</a>
+                        <a href="blank.html"><i class="fas fa-file"></i> Add new Doctor</a>
                     </li>
                     <li>
-                        <a href="404.html"><i class="fas fa-info-circle"></i> 404 Error page</a>
+                        <a href="404.html"><i class="fas fa-info-circle"></i> Show all Doctor</a>
                     </li>
                     <li>
                         <a href="500.html"><i class="fas fa-info-circle"></i> 500 Error page</a>
@@ -68,22 +65,7 @@
             <button type="button" id="sidebarCollapse" class="btn btn-outline-light default-light-menu"><i class="fas fa-bars"></i><span></span></button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <div class="nav-dropdown">
-                            <a href="" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown"><i class="fas fa-link"></i> <span>Quick Links</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i></a>
-                            <div class="dropdown-menu dropdown-menu-right nav-link-menu">
-                                <ul class="nav-list">
-                                    <li><a href="" class="dropdown-item"><i class="fas fa-list"></i> Access Logs</a></li>
-                                    <div class="dropdown-divider"></div>
-                                    <li><a href="" class="dropdown-item"><i class="fas fa-database"></i> Back ups</a></li>
-                                    <div class="dropdown-divider"></div>
-                                    <li><a href="" class="dropdown-item"><i class="fas fa-cloud-download-alt"></i> Updates</a></li>
-                                    <div class="dropdown-divider"></div>
-                                    <li><a href="" class="dropdown-item"><i class="fas fa-user-shield"></i> Roles</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <div class="nav-dropdown">
                             <a href="" class="nav-item nav-link dropdown-toggle" data-toggle="dropdown"><i class="fas fa-user"></i> <span>John Doe</span> <i style="font-size: .8em;" class="fas fa-caret-down"></i></a>
@@ -111,21 +93,19 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="icon-big text-center">
-                                            <i class="teal fas fa-shopping-cart"></i>
+                                            <i class="teal fas fa-diagnoses"></i>
                                         </div>
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="detail text-center">
-                                            <p>New Orders</p>
-                                            <span class="number">6,267</span>
+                                            <p> Consultations</p>
+                                            <span class="number">[[${NumberOfConsultations}]]</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr />
-                                    <div class="stats">
-                                        <i class="fas fa-redo-alt"></i> Updated every 30 minutes
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -136,21 +116,18 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="icon-big text-center">
-                                            <i class="olive fas fa-money-bill-alt"></i>
+                                            <i class="olive fas fa-medkit"></i>
                                         </div>
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="detail text-center">
-                                            <p>Revenue</p>
-                                            <span class="number">$180,900.00</span>
+                                            <p>Total Patients</p>
+                                            <span class="number">[[${NumberOfPatients}]]</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr />
-                                    <div class="stats">
-                                        <i class="fas fa-calendar"></i> In this current Month
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -161,21 +138,19 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="icon-big text-center">
-                                            <i class="violet fas fa-eye"></i>
+                                            <i class="violet fas fa-clinic-medical"></i>
                                         </div>
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="detail text-center">
-                                            <p>Page views</p>
-                                            <span class="number">28,210</span>
+                                            <p>Rooms Available</p>
+                                            <span class="number">[[${NumberOfRoomAvailabe}]]</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr />
-                                    <div class="stats">
-                                        <i class="fas fa-stopwatch"></i> In the last 24 Hour
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -186,21 +161,19 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <div class="icon-big text-center">
-                                            <i class="orange fas fa-envelope"></i>
+                                            <i class="orange fas fa-thermometer-half"></i>
                                         </div>
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="detail text-center">
-                                            <p>Support Request</p>
-                                            <span class="number">75</span>
+                                            <p>Patients Admitted</p>
+                                            <span class="number">[[${NumberAdmitted}]]</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr />
-                                    <div class="stats">
-                                        <i class="fas fa-envelope-open-text"></i> Active in the last 7 days
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
