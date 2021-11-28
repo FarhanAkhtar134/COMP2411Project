@@ -26,9 +26,9 @@ public class Patient {
     private Integer height;
     @Column(name = "ADDRESS")
     private String address;
-    @Column(name = "PHONE")
+    @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
-    @Column(name = "BIRTHDAY")
+    @Column(name = "DATE_OF_BIRTH")
     private String dateOfBirth;
 
 

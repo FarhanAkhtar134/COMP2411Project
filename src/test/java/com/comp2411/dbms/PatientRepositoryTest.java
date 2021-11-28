@@ -9,6 +9,9 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
+import java.util.Collections;
+import java.util.Optional;
+
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 
@@ -39,7 +42,31 @@ public class PatientRepositoryTest {
 
     @Test
     public void testListAllPatients(){
-        repo.findAll();
+       Iterable <Patient> patients= repo.findAll();
+       Assertions.assertNotNull(patients);
+
+       for (Patient patient : patients){
+           System.out.println(patient);
+       }
+
+    }
+
+    @Test
+    public void editPatient(){
+        String testPatientID = "M1234567";
+       Optional<Patient> editedPatent =  repo.findById(testPatientID);
+       Patient patient = editedPatent.get();
+        System.out.println(patient);
+       patient.setPhoneNumber("12385279");
+       repo.save(patient);
+
+        Patient updatedPatient = repo.findById(testPatientID).get();
+
+        System.out.println(updatedPatient);
+
+        Assertions.assertEquals("12385279",updatedPatient.getPhoneNumber());
+
+
     }
 
 
