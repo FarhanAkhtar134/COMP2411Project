@@ -17,7 +17,7 @@
 <div class="wrapper">
     <nav id="sidebar" class="active">
         <div class="sidebar-header">
-            <img th:src="@{/assets/img/bootstraper-logo.png}" alt="bootraper logo" class="app-logo">
+            Clinic Management System
         </div>
         <ul class="list-unstyled components">
             <li>
@@ -41,14 +41,12 @@
                 <a href="#pagesmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle no-caret-down"><i class="fas fa-copy"></i> Doctors</a>
                 <ul class="collapse list-unstyled" id="pagesmenu">
                     <li>
-                        <a href="blank.html"><i class="fas fa-file"></i> Add new Doctor</a>
+                        <a th:href="@{/doctor/new}"><i class="fas fa-file"></i> Add new Doctor</a>
                     </li>
                     <li>
-                        <a href="404.html"><i class="fas fa-info-circle"></i> Show all Doctor</a>
+                        <a th:href="@{/doctor}"><i class="fas fa-info-circle"></i> Show all Doctor</a>
                     </li>
-                    <li>
-                        <a href="500.html"><i class="fas fa-info-circle"></i> 500 Error page</a>
-                    </li>
+
                 </ul>
             </li>
             <li>
@@ -228,7 +226,7 @@
                                     <div class="dfd text-center">
                                         <i class="olive large-icon mb-2 fas fa-dollar-sign"></i>
                                         <h4 class="mb-0">+98,601</h4>
-                                        <p class="text-muted">TOTAL SALES</p>
+                                        <p class="text-muted">TOTAL REVENUE</p>
                                     </div>
                                 </div>
                             </div>

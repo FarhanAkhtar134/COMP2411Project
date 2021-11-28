@@ -21,9 +21,8 @@ public class Consultation {
     private Long consultationFee;
 
 
-    @ManyToOne
-    @JoinColumn(name="PATIENT_HKID")
-    private Patient patient;
+//    @ManyToOne
+//    private Patient patient;
 
 
 }
